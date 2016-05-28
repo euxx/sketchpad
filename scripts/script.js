@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 
-	$("body").append("<button>Let's Play!</button>");
+	$("body").append("<button>Enjoy It ^</button>");
 
 	$("body").append("<div class='container'></div>");
 
