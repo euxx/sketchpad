@@ -7,9 +7,11 @@ $(document).ready(function() {
 	$("body").append("<div class='container'></div>");
 
 	$("button").click(function() {
+
 		$(".container").empty();
 		gridNum = prompt("How many grids do you want? ^");
 		addGrid(gridNum);
+
 	});
 
 	addGrid(gridNum);
@@ -18,7 +20,7 @@ $(document).ready(function() {
 
 	var gridNum = 16;
 
-	var addGrid = function(num) {
+	var addGrid = function(num, hex) {
 
 		for(var i = 1; i <= num; i++) {
 			$(".container").append("<div class='row'></div>");
@@ -30,7 +32,7 @@ $(document).ready(function() {
 
 		$(".grid").mouseenter(function() {
 			$(this).addClass("hover-color");
-			$(".hover-color, .current").css("background", ranColor());
+			$(".hover-color").css("background", ranColor());
 		});
 
 		$(".grid").mouseleave(function() {
@@ -69,6 +71,28 @@ $(document).ready(function() {
 	};
 
 	var ranColor = function() {
-		console.log("#" + ranHex() + ranHex() + ranHex());
-		return "#" + ranHex() + ranHex() + ranHex();
+		console.log("#" + ranHex() + ranHex() + ranHex() + ranHex() + ranHex() + ranHex());
+		return "#" + ranHex() + ranHex() + ranHex() + ranHex() + ranHex() + ranHex();
 	};
+
+
+	var deepHex = function() {
+		var hex = 10;
+		switch(hex) {
+			case 10:
+			hex = "a";
+			break;
+
+			default:
+			break;
+		}
+		console.log("#" + hex + hex + hex);
+		return "#" + hex + hex + hex;
+
+		// for (var i = 1; i > 0; i--) {
+		// 	hex = hex - 1;
+		// }
+	};
+
+	deepHex();
+
