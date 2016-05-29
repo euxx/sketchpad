@@ -20,18 +20,19 @@ $(document).ready(function() {
 
 	var gridNum = 16;
 
-	var addGrid = function(num, hex) {
+	var addGrid = function(number) {
 
-		for(var i = 1; i <= num; i++) {
+		for(var i = 1; i <= number; i++) {
 			$(".container").append("<div class='row'></div>");
 		}
 
-		for (var j = 1; j <= num; j++) {
+		for (var j = 1; j <= number; j++) {
 			$(".row").append("<div class='grid'></div>");
 		}
 
 		$(".grid").mouseenter(function() {
 			$(this).addClass("hover-color");
+			// $(".hover-color").css("background", deepHex());
 			$(".hover-color").css("background", ranColor());
 		});
 
@@ -46,38 +47,45 @@ $(document).ready(function() {
 		switch(ranNum) {
 			case 10:
 			ranNum = "a";
-			return ranNum;;
+			break;
 
 			case 11:
 			ranNum = "b";
-			return ranNum;;
+			break;
 
 			case 12:
 			ranNum = "c";
-			return ranNum;;
+			break;
 
 			case 13:
 			ranNum = "d";
-			return ranNum;;
+			break;
 			case 14:
 			ranNum = "e";
-			return ranNum;;
+			break;
 			case 15:
 			ranNum = "f";
-			return ranNum;;
+			break;
 			default:
-			return ranNum;;
+			break;
 		}
+		return ranNum;
 	};
 
 	var ranColor = function() {
-		console.log("#" + ranHex() + ranHex() + ranHex() + ranHex() + ranHex() + ranHex());
-		return "#" + ranHex() + ranHex() + ranHex() + ranHex() + ranHex() + ranHex();
+		var h = ranHex;
+		console.log("#" + h() + h() + h() + h() + h() + h());
+		return "#" + h() + h() + h() + h() + h() + h();
 	};
+
 
 
 	var deepHex = function() {
 		var hex = 10;
+
+		for (var i = 1; i > 0; i--) {
+			hex--;
+		}
 		switch(hex) {
 			case 10:
 			hex = "a";
@@ -88,10 +96,6 @@ $(document).ready(function() {
 		}
 		console.log("#" + hex + hex + hex);
 		return "#" + hex + hex + hex;
-
-		// for (var i = 1; i > 0; i--) {
-		// 	hex = hex - 1;
-		// }
 	};
 
 	deepHex();
